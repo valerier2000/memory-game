@@ -1,16 +1,13 @@
-export default function MemoryCard({ handleClick }) {
-  const emojiArray = [
-    "🐶",
-    "🐷",
-    "🐙",
-    "🐛",
-    "🐵",
-    "🐶",
-    "🐷",
-    "🐙",
-    "🐛",
-    "🐵",
-  ];
+import { decodeEntity } from "html-entities";
+
+export default function MemoryCard({ handleClick, data }) {
+  let emojiArray = ["🐶", "🐷", "🐙", "🐛", "🐵", "🐶", "🐷", "🐙", "🐛", "🐵"];
+
+  const decodedData = data
+    .map((d) => d.htmlCode[0])
+    .map((d) => decodeEntity(d));
+  console.log(decodedData);
+  emojiArray = [...decodedData];
 
   const emojiEl = emojiArray.map((emoji, index) => (
     <li key={index} className="card-item">

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { decodeEntity } from "html-entities";
 import Form from "./components/Form";
 import MemoryCard from "./components/MemoryCard";
 
@@ -29,8 +28,6 @@ export default function App() {
     }
   }
 
-  console.log(emojisData);
-
   function turnCard() {
     console.log("Memory card clicked");
   }
@@ -39,7 +36,7 @@ export default function App() {
     <main>
       <h1>Memory</h1>
       {!isGameOn && <Form handleSubmit={startGame} />}
-      {isGameOn && <MemoryCard handleClick={turnCard} />}
+      {isGameOn && <MemoryCard handleClick={turnCard} data={emojisData} />}
     </main>
   );
 }
