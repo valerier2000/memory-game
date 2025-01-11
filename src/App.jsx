@@ -21,11 +21,29 @@ export default function App() {
       const data = await response.json();
       const dataSample = data.slice(0, 5);
 
+      console.log(getRandomIndices(data));
+
       setEmojisData(dataSample);
       setIsGameOn(true);
     } catch (error) {
       console.error(error);
     }
+  }
+
+  function getRandomIndices(data) {
+    const randomIndicesArray = [];
+
+    for (let i = 0; i < 5; i++) {
+      const randomNum = Math.floor(Math.random() * data.length);
+
+      if (!randomIndicesArray.includes(randomNum)) {
+        randomIndicesArray.push(randomNum);
+      } else {
+        i--;
+      }
+    }
+
+    return randomIndicesArray;
   }
 
   function turnCard() {
