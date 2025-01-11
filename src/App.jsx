@@ -19,15 +19,22 @@ export default function App() {
       }
 
       const data = await response.json();
-      const dataSample = data.slice(0, 5);
 
-      console.log(getRandomIndices(data));
+      const dataSlice = getDataSlice(data);
 
-      setEmojisData(dataSample);
+      setEmojisData(dataSlice);
       setIsGameOn(true);
     } catch (error) {
       console.error(error);
     }
+  }
+
+  function getDataSlice(data) {
+    const randomIndices = getRandomIndices(data);
+
+    const dataSlice = randomIndices.map((index) => data[index]);
+
+    return dataSlice;
   }
 
   function getRandomIndices(data) {
