@@ -76,6 +76,8 @@ export default function App() {
 
   function turnCard(name, index) {
     console.log("Memory card clicked");
+    console.log("card with index " + index);
+    console.log("You clicked the emoji with name " + name);
   }
 
   return (
