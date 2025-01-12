@@ -5,6 +5,7 @@ import MemoryCard from "./components/MemoryCard";
 export default function App() {
   const [isGameOn, setIsGameOn] = useState(false);
   const [emojisData, setEmojisData] = useState([]);
+  const [selectedCards, setSelectedCards] = useState([]);
 
   async function startGame(e) {
     e.preventDefault();
@@ -69,17 +70,10 @@ export default function App() {
     return pairedEmojisArray;
   }
 
-  /**
-   * Challenge:
-   * 2) In the turnCard function, receive name and index as parameters and log them to the console.
-   */
-
   function turnCard(name, index) {
-    console.log("Memory card clicked");
-    console.log("card with index " + index);
-    console.log("You clicked the emoji with name " + name);
+    setSelectedCards([{ name, index }]);
   }
-
+  console.log(selectedCards);
   return (
     <main>
       <h1>Memory</h1>
