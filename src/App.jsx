@@ -69,7 +69,12 @@ export default function App() {
     return pairedEmojisArray;
   }
 
-  function turnCard() {
+  /**
+   * Challenge:
+   * 2) In the turnCard function, receive name and index as parameters and log them to the console.
+   */
+
+  function turnCard(name, index) {
     console.log("Memory card clicked");
   }
 
