@@ -71,9 +71,22 @@ export default function App() {
   }
 
   function turnCard(name, index) {
-    setSelectedCards([{ name, index }]);
+    const selectedCardEntry = setSelectedCards.find(
+      (emoji) => emoji.index === index
+    );
+
+    if (!selectedCardEntry && selectedCards.length < 2) {
+      setSelectedCards((prevSelectedCards) => [
+        ...prevSelectedCards,
+        { name, index },
+      ]);
+    } else if (!selectedCardEntry && selectedCards.length === 2) {
+      setSelectedCards([{ name, index }]);
+    }
   }
+
   console.log(selectedCards);
+
   return (
     <main>
       <h1>Memory</h1>
