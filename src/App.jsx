@@ -71,7 +71,7 @@ export default function App() {
   }
 
   function turnCard(name, index) {
-    const selectedCardEntry = setSelectedCards.find(
+    const selectedCardEntry = selectedCards.find(
       (emoji) => emoji.index === index
     );
 
