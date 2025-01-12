@@ -27,7 +27,7 @@ export default function App() {
     }
   }, [matchedCards]);
 
-  console.log(isGameOver);
+  console.log(selectedCards);
 
   async function startGame(e) {
     e.preventDefault();
