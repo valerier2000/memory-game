@@ -11,7 +11,7 @@ export default function MemoryCard({
     const selectedCardEntry = selectedCards.find(
       (card) => card.index === index
     );
-    const matchedCardEntry = matchedCards.find((card) => card.index);
+    const matchedCardEntry = matchedCards.find((card) => card.index === index);
 
     const cardStyle = matchedCardEntry
       ? "card-item--matched"
