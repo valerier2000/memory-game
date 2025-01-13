@@ -7,7 +7,7 @@ export default function App() {
   const [emojisData, setEmojisData] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
   const [matchedCards, setMatchedCards] = useState([]);
-  const [isGameOver, setIsGameOver] = useState(false);
+  const [areAllCardsMatched, setAreAllCardsMatched] = useState(false);
 
   useEffect(() => {
     if (
@@ -23,7 +23,7 @@ export default function App() {
 
   useEffect(() => {
     if (emojisData.length && matchedCards.length === emojisData.length) {
-      setIsGameOver(true);
+      setAreAllCardsMatched(true);
     }
   }, [matchedCards]);
 
