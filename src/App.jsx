@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Form from "./components/Form";
 import MemoryCard from "./components/MemoryCard";
 import AssistiveTechInfo from "./components/AssistiveTechInfo";
+import GameOver from "./components/GameOver";
 
 export default function App() {
   const [isGameOn, setIsGameOn] = useState(false);
@@ -106,6 +107,16 @@ export default function App() {
     }
   }
 
+  /**
+   * Challenge:
+   * 1) Inside the "components" folder, create a new component, "GameOver", that returns a div containing a p element. Use the following content and styling:
+   *      - div styling: "wrapper wrapper--accent"
+   *      - p content: "You've matched all the memory cards!"
+   *      - p styling: "p--large"
+   * 2) Render "GameOver" conditionally above the "MemoryCard" when "areAllCardsMatched" is true.
+   * 3) Play a memory game to check that the conditional rendering is working.
+   */
+
   return (
     <main>
       <h1>Memory</h1>
@@ -116,6 +127,7 @@ export default function App() {
           matchedCards={matchedCards}
         />
       )}
+      {areAllCardsMatched && <GameOver />}
       {isGameOn && (
         <MemoryCard
           handleClick={turnCard}
