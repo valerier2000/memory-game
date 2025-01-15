@@ -38,6 +38,11 @@ export default function App() {
 
   console.log(selectedCards);
 
+  function handleFormChange(e) {
+    console.log(e.target.value);
+    console.log(e.target.name);
+  }
+
   async function startGame(e) {
     e.preventDefault();
 
@@ -131,7 +136,9 @@ export default function App() {
   return (
     <main>
       <h1>Memory</h1>
-      {!isGameOn && !isError && <Form handleSubmit={startGame} />}
+      {!isGameOn && !isError && (
+        <Form handleSubmit={startGame} handleChange={handleFormChange} />
+      )}
       {isGameOn && !areAllCardsMatched && (
         <AssistiveTechInfo
           emojisData={emojisData}
