@@ -1,6 +1,4 @@
 export default function AssistiveTechInfo({ emojisData, matchedCards }) {
-  console.log(emojisData);
-  console.log(matchedCards);
   return (
     <section className="sr-only" aria-live="polite" aria-atomic="true">
       <h2>Game status</h2>

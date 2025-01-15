@@ -17,8 +17,6 @@ export default function App() {
   const [areAllCardsMatched, setAreAllCardsMatched] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  console.log(isError);
-
   useEffect(() => {
     if (
       selectedCards.length === 2 &&
@@ -36,8 +34,6 @@ export default function App() {
       setAreAllCardsMatched(true);
     }
   }, [matchedCards]);
-
-  console.log(selectedCards);
 
   function handleFormChange(e) {
     setFormData((prevFormData) => ({
@@ -116,8 +112,6 @@ export default function App() {
   }
 
   function turnCard(name, index) {
-    console.log("clicked");
-
     if (selectedCards.length < 2) {
       setSelectedCards((prevSelectedCards) => [
         ...prevSelectedCards,
