@@ -6,6 +6,9 @@ import GameOver from "./components/GameOver";
 import ErrorCard from "./components/ErrorCard";
 
 export default function App() {
+  const initialFormData = { category: "animals-and-nature", number: 10 };
+
+  const [formData, setFormData] = useState(initialFormData);
   const [isGameOn, setIsGameOn] = useState(false);
   const [emojisData, setEmojisData] = useState([]);
   const [selectedCards, setSelectedCards] = useState([]);
@@ -39,10 +42,10 @@ export default function App() {
     e.preventDefault();
 
     try {
-      throw new Error("Throwing an error");
+      // throw new Error("Throwing an error");
 
       const response = await fetch(
-        "https://emojihub.yurace.pro/api/all/category/animals-and-nature"
+        `https://emojihub.yurace.pro/api/all/category/${formData.category}`
       );
 
       if (!response.ok) {
@@ -73,7 +76,7 @@ export default function App() {
   function getRandomIndices(data) {
     const randomIndicesArray = [];
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < formData.number / 2; i++) {
       const randomNum = Math.floor(Math.random() * data.length);
 
       if (!randomIndicesArray.includes(randomNum)) {
