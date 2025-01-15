@@ -5,7 +5,7 @@ export default function Form({ handleSubmit, handleChange }) {
     <div className="form-container">
       <form className="wrapper">
         <div className="form__inner-wrapper">
-          <label htmlFor="category">Choose a category:</label>
+          <label htmlFor="category">Select an emoji category</label>
           <select name="category" id="category" onChange={handleChange}>
             <option value="animals-and-nature">Animals and nature</option>
             <option value="food-and-drink">Food and drink</option>
@@ -16,7 +16,7 @@ export default function Form({ handleSubmit, handleChange }) {
         </div>
 
         <div className="form__inner-wrapper">
-          <label htmlFor="number">Choose a number:</label>
+          <label htmlFor="number">Select the number of memory cards</label>
           <select name="number" id="number" onChange={handleChange}>
             <option value="10">10</option>
             <option value="20">20</option>
