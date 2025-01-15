@@ -1,16 +1,12 @@
 import { data } from "../data/data";
 
 export default function Select({ handleChange }) {
-  Object.entries(data).map(([key, value]) => {
-    console.log(key);
+  const selectEl = Object.entries(data).map(([key, value]) => (
+    <div key={key} className="form__inner-wrapper">
+      <label htmlFor={key}>Select a {key}</label>
+      <select name={key} id={key} onChange={handleChange}></select>
+    </div>
+  ));
 
-    const selectEl = (
-      <div className="form__inner-wrapper" key={key}>
-        <label htmlFor={key}>Select an emoji category</label>
-        <select name={key} id={key} onChange={handleChange}></select>
-      </div>
-    );
-
-    return selectEl;
-  });
+  return <>{selectEl}</>;
 }
