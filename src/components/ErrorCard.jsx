@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import RegularButton from "./RegularButton";
 
 export default function ErrorCard({ handleClick }) {
-  const divRef = useRef();
+  const divRef = useRef(null);
 
   useEffect(() => {
     divRef.current.focus();
