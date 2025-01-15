@@ -39,8 +39,10 @@ export default function App() {
   console.log(selectedCards);
 
   function handleFormChange(e) {
-    console.log(e.target.value);
-    console.log(e.target.name);
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [e.target.name]: e.target.value,
+    }));
   }
 
   async function startGame(e) {
